@@ -4,9 +4,20 @@ Returns: a List of integers
 '''
 def sliding_window_max(nums, k):
     # Your code here
+    last_index = len(nums) - k
+    window_array = []
 
-    pass
+    for i in range(last_index + 1):
+        current_index = i
+        large_value = nums[i]
 
+        while current_index is not i + k -1:
+            if large_value < nums[current_index + 1]:
+                large_value = nums[current_index + 1]
+            current_index +=1
+
+        window_array.append(large_value)
+    return window_array
 
 if __name__ == '__main__':
     # Use the main function here to test out your implementation 

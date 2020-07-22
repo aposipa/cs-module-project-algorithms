@@ -4,8 +4,18 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
+    x = (len(arr) -1)
+    for i in range(x):
+        index = 0
+        # loop through arr
+        while index < (x):
+            if (i != index and arr[i] == arr[index]):
+                break
+            index += 1
+        if (index == (x)): 
+            return arr[i]
 
-    pass
+    return -1 #not found
 
 
 if __name__ == '__main__':
